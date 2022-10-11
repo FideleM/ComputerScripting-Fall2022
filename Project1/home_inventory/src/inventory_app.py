@@ -33,7 +33,6 @@ class InventoryApp:
             case _:
                 print('Bad, bad user ...')
 
-
     def new_inventory(self):
         if __debug__:
             print('new_inventory() method called...')
@@ -45,7 +44,7 @@ class InventoryApp:
     def save_inventory(self):
         if __debug__:
             print('save_inventory() method called...')
-
+    #Program prompt
     def start_program(self):
         while self.keep_going:
             self.display_menu()
