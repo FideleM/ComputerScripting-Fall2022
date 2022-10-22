@@ -4,7 +4,7 @@ from inventory_app import InventoryApp
 
 
 def main():
-	"Execute main program"
+	"""Execute main program"""
 	inventory_app = InventoryApp()
 	inventory_app.start_program()
 

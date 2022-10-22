@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#: Title        : build.sh
-#: Date         : 10 September 2022
-#: Author       : Rick Miller
+#: Title        : Home inventory app
+#: Date         : 15 October 2022
+#: Author       : Fidele Nasibu
 #: Version      : 1.0
-#: Description  : Build script template
+#: Description  : Add, load, list, save, and search inventory
 #: Options      : None
 
 # Global Constants
