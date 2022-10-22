@@ -1,0 +1,1 @@
+{"type": "Home Inventory", "date": "2022-10-21", "items": [{"item": "bed", "count": 5}, {"item": "table", "count": 4}, {"item": "speaker", "count": 6}, {"item": "desk", "count": 4}, {"item": "computer", "count": 4}, {"item": "couch", "count": 2}]}
