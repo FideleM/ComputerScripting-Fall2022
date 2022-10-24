@@ -3,6 +3,11 @@
 from roster import Roster
 from subprocess import call
 import os
+from roster import Roster
+from subprocess import call
+import os
+
+
 
 class RosterApp(object):
 	"""Implements household roster control features."""
@@ -19,7 +24,7 @@ class RosterApp(object):
 		# Fields
 		self.menu_choice = 1
 		self.keep_going = True
-		self.team_roster = Roster()
+		self.roster = Roster()
 		pass
 
 	def clear_screen(self):
@@ -67,6 +72,7 @@ class RosterApp(object):
 		self.clear_screen()
 		if __debug__:
 			print('new_roster() method called...')
+		self.roster.new_roster()
 
 	def load_roster(self):
 		"""Load roster from file."""
