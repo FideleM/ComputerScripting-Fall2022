@@ -28,6 +28,18 @@ class Roster(object):
         else:
             self._initialize_roster_dictionary()
 
+    def load_roster(self):
+        """Load roster from file."""
+        if __debug__:
+            print('load_roster() method called...')
+        try:
+            file_path = self._get_file_path()
+            with open(file_path, 'r', encoding='UTF-8') as f:
+                self.dictionary = json.loads(f.read())
+        except OSError:
+            print('Problem loading file. Please try again.')
+
+
     def save_roster(self):
         """Save roster to file."""
         if __debug__:
