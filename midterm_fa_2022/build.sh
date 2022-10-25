@@ -102,7 +102,9 @@ process_arguments() {
 
 
 main(){
+	export TERM='xterm-color'
 	process_arguments "$@"
+
 	exit 1
 }
 

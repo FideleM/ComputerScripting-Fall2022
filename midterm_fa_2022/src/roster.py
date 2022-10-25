@@ -51,10 +51,23 @@ class Roster(object):
 
     def add_members(self, player_name, age):
         assert self.dictionary != None
-        self.dictionary['team_roster'].append({'name': player_name, 'age': int(age)})
+        self.dictionary['members'].append({'name': player_name, 'age': int(age)})
 
-
-
+    def print_roster(self):
+        """Print roster to console."""
+        if __debug__:
+            print('print_roster() method called...')
+            with open("data/team_roster.json", "r") as rs:
+                self.data = json.load(rs)
+                for key, value in self.data.items():
+                    if key != "members":
+                        print(f"{key}:{value}")
+                    else:
+                        print(f"{key}:")
+                        for i in range(len(value)):
+                            for key1, value1 in value[i].items():
+                                print(f"{key1}: {value1}")
+                            print("\n")
 
     def _get_file_path(self):
         """Get flle path from user."""
@@ -67,7 +80,7 @@ class Roster(object):
         self.dictionary = {}
         self.dictionary['type'] = 'Roster List'
         self.dictionary['date'] = date.today().isoformat()
-        self.dictionary['team_roster'] = []
+        self.dictionary['members'] = []
         if __debug__:
             print("New Roster List Initialized")
 
