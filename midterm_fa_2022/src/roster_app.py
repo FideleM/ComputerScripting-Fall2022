@@ -95,6 +95,7 @@ class RosterApp(object):
 		self.clear_screen()
 		if __debug__:
 			print('save_roster() method called...')
+		self.roster.save_roster()
 		
 
 
