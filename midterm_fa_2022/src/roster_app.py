@@ -79,6 +79,7 @@ class RosterApp(object):
 		self.clear_screen()
 		if __debug__:
 			print('load_roster() method called...')
+		self.roster.load_roster()
 
 
 	def print_roster(self):
@@ -102,6 +103,12 @@ class RosterApp(object):
 		self.clear_screen()
 		if __debug__:
 			print('print_roster() method called...')
+		keep_going = 'y'
+		while keep_going[0] == 'y':
+			player_name = input('Player Name: ')
+			age = int(input('Player age: '))
+			self.roster.add_members(player_name, age)
+			keep_going = input('Add another? (y/n): ')
 
 
 

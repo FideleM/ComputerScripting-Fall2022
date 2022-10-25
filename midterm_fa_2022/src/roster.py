@@ -28,6 +28,10 @@ class Roster(object):
         else:
             self._initialize_roster_dictionary()
 
+    def add_members(self, player_name, age):
+        assert self.dictionary != None
+        self.dictionary['team_roster'].append({'name': player_name, 'age': int(age)})
+
 
     def _get_file_path(self):
         """Get flle path from user."""
@@ -40,7 +44,7 @@ class Roster(object):
         self.dictionary = {}
         self.dictionary['type'] = 'Roster List'
         self.dictionary['date'] = date.today().isoformat()
-        self.dictionary['items'] = []
+        self.dictionary['team_roster'] = []
         if __debug__:
             print("New Roster List Initialized")
 
