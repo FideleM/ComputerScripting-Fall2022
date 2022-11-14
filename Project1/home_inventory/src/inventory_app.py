@@ -14,6 +14,7 @@ class InventoryApp():
         self.LIST_INVENTORY = '3'
         self.ADD_ITEMS = '4'
         self.SAVE_INVENTORY = '5'
+        self.SEARCH_INVENTORY = '6'
         self.EXIT = '7'
         #fields
         self.menu_choice = 1
@@ -34,6 +35,7 @@ class InventoryApp():
         print('\t\t3. List Inventory')
         print('\t\t4. Add Items')
         print('\t\t5. Save Inventory')
+        print('\t\t6. Search Inventory')
         print('\t\t7. Exit')
         print()
 
@@ -41,7 +43,7 @@ class InventoryApp():
         """This section processes menu choices and execute corresponding methods"""
         menu_choice = input('Select the menu item numeber: ')
         if __debug__:
-            print(f'You entered: {self.menu_choice}')
+            print(f'You entered: {menu_choice}')
         match menu_choice:
             case self.NEW_INVENTORY:
                 self.new_inventory()
@@ -53,9 +55,11 @@ class InventoryApp():
                 self.add_items()
             case self.SAVE_INVENTORY:
                 self.save_inventory()
+            case self.SEARCH_INVENTORY:
+                self.search_inventory()
             case self.EXIT:
                 if __debug__:
-                    print('Goodbey!')
+                    print('Goodbye!')
                 self.keep_going = False
                 self.clear_screen
             case _:
@@ -94,6 +98,14 @@ class InventoryApp():
             item_count = input('Item Count: ')
             self.home_inventory.add_item(item_name, item_count)
             keep_going = input('Add another? (y/n): ')
+
+    def search_inventory(self):
+        """This searches items in the inventory"""
+        if __debug__:
+            print("Search inventory method called")
+        self.home_inventory.search_inventory()
+
+
 
     #Program prompt
     def start_program(self):

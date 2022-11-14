@@ -32,7 +32,7 @@
 ## Preparation
 - Clone the git@github.com:pulpfreepress/it-566-computer-scripting.git repository
 - Switch to the midterm branch:
-    -- `git branch midterm`
+    -- `git checkout midterm`
 - Copy the folder `exams/midterm_fa_2022` to your local projects repository
 - Commit the `midterm_fa_2022` folder and its contents to your remote repository
     - In the data folder you will find a file named: `team_roster.json`

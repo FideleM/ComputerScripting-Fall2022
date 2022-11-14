@@ -2,6 +2,7 @@
 
 import json
 from datetime import date
+#from SavedInventory.txt import SavedInventory
 
 class HomeInventory():
     """To implements Home Inventory data structures and operations"""
@@ -60,10 +61,22 @@ class HomeInventory():
             else:
                 print(f'{key}: \t {value}')
 
+    def search_inventory(self):
+        """Searches through the inventory"""
+        file_path = self._get_file_path()
+        search_key = input("Enter the name of the item to lookup: ")
+        with open(file_path, "r") as f:
+            data = json.load(f)
+        for item in data["items"]:
+            for key, value in item.items():
+                if key == 'item' and value == search_key:
+                    print(item)
+
+
 
     def _get_file_path(self):
         """Get the file path from user"""
-        f_path = input("Please enter path and filename: ")
+        f_path = "../inventory.json"
         return f_path
 
     def _initialize_home_inventory_dictionary(self):
